@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+
 import { Album } from "../album.model";
 import { ALBUMS } from "../albums.data";
 
@@ -11,9 +12,12 @@ export class AlbumListComponent implements OnInit {
   albumsArray: Album[];
 
   ngOnInit(): void {
-    this.albumsArray = this.albumsArray = ALBUMS;
-   }
-  parentFunctionHandler(album: { albumName: string; }) {
-    alert('Album ' + album.albumName + ' was sent from the album card component');
-}
+    this.albumsArray = ALBUMS;
+  }
+
+  parentFunctionHandler(album) {
+    alert(
+      "Album " + album.albumName + " was sent from the album card component"
+    );
+  }
 }
